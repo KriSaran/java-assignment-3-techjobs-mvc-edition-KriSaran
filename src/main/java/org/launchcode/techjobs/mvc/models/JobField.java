@@ -3,8 +3,8 @@ package org.launchcode.techjobs.mvc.models;
 import java.util.Objects;
 
 public abstract class JobField {
-    private int id;
     private static int nextId = 1;
+    private final int id;
     private String value;
 
     // Constructor assigns a unique ID number to each new object.

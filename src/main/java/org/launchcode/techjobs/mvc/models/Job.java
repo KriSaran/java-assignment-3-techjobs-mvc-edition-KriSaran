@@ -4,9 +4,8 @@ import java.util.Objects;
 
 public class Job {
 
-    private int id;
     private static int nextId = 1;
-
+    private final int id;
     private String name;
     private Employer employer;
     private Location location;
@@ -31,21 +30,21 @@ public class Job {
 
     // Custom toString method.
     @Override
-    public String toString(){
+    public String toString() {
         String output = "";
-        if (name.equals("")){
+        if (name.equals("")) {
             name = "Data not available";
         }
-        if (employer.getValue().equals("") || employer.getValue() == null){
+        if (employer.getValue().equals("") || employer.getValue() == null) {
             employer.setValue("Data not available");
         }
-        if (location.getValue().equals("") || location.getValue() == null){
+        if (location.getValue().equals("") || location.getValue() == null) {
             location.setValue("Data not available");
         }
-        if (coreCompetency.getValue().equals("") || coreCompetency.getValue() == null){
+        if (coreCompetency.getValue().equals("") || coreCompetency.getValue() == null) {
             coreCompetency.setValue("Data not available");
         }
-        if (positionType.getValue().equals("") || positionType.getValue() == null){
+        if (positionType.getValue().equals("") || positionType.getValue() == null) {
             positionType.setValue("Data not available");
         }
 
