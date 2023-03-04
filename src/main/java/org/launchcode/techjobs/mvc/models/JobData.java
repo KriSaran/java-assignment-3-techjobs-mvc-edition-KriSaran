@@ -78,7 +78,6 @@ public class JobData {
 
         return jobs;
     }
-
     public static String getFieldValue(Job job, String fieldName) {
         String theValue;
         if (fieldName.equals("name")) {
