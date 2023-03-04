@@ -33,6 +33,10 @@ table.job-listing td:first-child {
     font-weight: bold;
 }
 
+table.job-listing td:nth-child(2) {
+     font-family: "Lucida Console", "Courier New", monospace;
+}
+
 table.job-listing td:last-child {
     width: 80%;
 }
@@ -44,3 +48,4 @@ label {
 .centered {
     text-align: center;
 }
+

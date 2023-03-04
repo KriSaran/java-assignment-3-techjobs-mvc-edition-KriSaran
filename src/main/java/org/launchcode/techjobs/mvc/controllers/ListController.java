@@ -49,16 +49,19 @@ public class ListController {
     }
 
     @GetMapping(value = "jobs")
-    public String listJobsByColumnAndValue(Model model, @RequestParam String column, @RequestParam(required = false) String value) {
+    public String listJobsByColumnAndValue(Model model, @RequestParam(required = false) String column, @RequestParam(required = false) String value) {
         ArrayList<Job> jobs;
         System.out.println(column + value);
         if (column.equals("all")) {
             jobs = JobData.findAll();
             model.addAttribute("title", "All Jobs");
-        } else {
+        } else if(!column.isEmpty()&&!value.isEmpty()) {
             jobs = JobData.findByColumnAndValue(column, value);
-            //System.out.println(jobs.toString());
+            System.out.println(jobs.toString());
             model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
+        }else{
+            jobs=JobData.findByValue(value);
+            model.addAttribute("title", "Jobs with " + ": " + value);
         }
         model.addAttribute("jobs", jobs);
 
